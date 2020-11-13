@@ -14,7 +14,7 @@ from sklearn.preprocessing import QuantileTransformer
 from sklearn.feature_selection import VarianceThreshold
 from sklearn.cluster import KMeans
 from iterstrat.ml_stratifiers import MultilabelStratifiedKFold
-
+from utils import seed_everything
 
 import torch
 import torch.nn as nn
@@ -201,6 +201,7 @@ if __name__ == "__main__":
     import joblib
     
     path = sys.argv[1]
+
 
     train_features = pd.read_csv(f'{path}/train_features.csv')
     test_features  = pd.read_csv(f'{path}/test_features.csv')
