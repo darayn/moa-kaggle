@@ -114,7 +114,7 @@ def fe_stats(train, test):
     return train, test
 
 
-def process(train,test):
+def process(train_features,test_features):
 
 	GENES = [col for col in train_features.columns if col.startswith('g-')]
 	CELLS = [col for col in train_features.columns if col.startswith('c-')]
