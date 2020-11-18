@@ -201,7 +201,7 @@ if __name__ == "__main__":
     import joblib
     
     path = sys.argv[1]
-
+    seed_everything()
 
     train_features = pd.read_csv(f'{path}/train_features.csv')
     test_features  = pd.read_csv(f'{path}/test_features.csv')
@@ -221,8 +221,8 @@ if __name__ == "__main__":
     print(f'Targets : {len(target_cols)}')
     print(f'Features : {len(feature_cols)}')
     
-    folds.to_csv(path/'folds.csv', index=False)
-    test .to_csv(path/'test.csv' , index=False)
+    folds.to_csv(path + '/folds.csv', index=False)
+    test .to_csv(path + '/test.csv' , index=False)
     columns = {'features': feature_cols, 'targets': target_cols}
-    joblib.dump(columns, path/'columns.pkl')
+    joblib.dump(columns, path + '/columns.pkl')
 
